@@ -94,8 +94,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PairingTest.Web\PairingTest.Web.csproj">
-      <Project>{64BC50E9-61E1-4D69-9C29-1A0DBAE1A762}</Project>
+    <ProjectReference Include="..\..\..\Documents\Projects\CandidateTest\PairingTest.Web\PairingTest.Web.csproj">
+      <Project>{64bc50e9-61e1-4d69-9c29-1a0dbae1a762}</Project>
       <Name>PairingTest.Web</Name>
     </ProjectReference>
     <ProjectReference Include="..\QuestionServiceWebApi\QuestionServiceWebApi.csproj">

@@ -1,10 +1,23 @@
 ﻿@model PairingTest.Web.Models.QuestionnaireViewModel
-
 <html>
-    <head>
-        <title>@Model.QuestionnaireTitle</title>
-    </head>
-    <body>
-              
-    </body>
+<head>
+    <title>@Model.QuestionnaireTitle</title>
+</head>
+<body>
+    <h1>@Model.QuestionnaireTitle</h1>
+    <ul>
+        @foreach (var question in Model.Questions)
+        {
+            <li>
+                @question.Text
+                <ul class="options" data-question-id="@question.Id">
+                    @foreach (var option in question.Options)
+                    {
+                        <li class="js-answer" role="button" data-option-id="@option.Id">@option.Text</li>
+                    }
+                </ul>
+            </li>
+        }
+    </ul>
+</body>
 </html>
