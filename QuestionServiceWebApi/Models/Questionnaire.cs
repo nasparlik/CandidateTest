@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using QuestionServiceWebApi.Models;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace QuestionServiceWebApi
@@ -9,6 +10,6 @@ namespace QuestionServiceWebApi
         [DataMember]
         public string QuestionnaireTitle { get; set; }
         [DataMember]
-        public IList<string> QuestionsText { get; set; }
+        public IList<Question> Questions { get; set; }
     }
 }
