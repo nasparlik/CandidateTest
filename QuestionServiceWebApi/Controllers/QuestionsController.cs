@@ -1,4 +1,6 @@
 ﻿using System.Web.Http;
+using AutoMapper;
+using QuestionServiceWebApi.Dtos;
 using QuestionServiceWebApi.Interfaces;
 
 namespace QuestionServiceWebApi.Controllers
@@ -12,14 +14,14 @@ namespace QuestionServiceWebApi.Controllers
             _questionRepository = questionRepository;
         }
 
-        public QuestionsController() : this(new QuestionRepository())
-        {
-        }
+        public QuestionsController() : this(new QuestionRepository()) {}
 
         // GET api/questions
-        public Questionnaire Get()
+        public QuestionnaireDto Get()
         {
-            return _questionRepository.GetQuestionnaire();
+            var qustionnaire = _questionRepository.GetQuestionnaire();
+
+            return Mapper.Map<Questionnaire, QuestionnaireDto>(qustionnaire);
         }
 
         // GET api/questions/5
